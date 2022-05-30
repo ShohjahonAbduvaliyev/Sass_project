@@ -1,13 +1,7 @@
-header{
-  background-color:$mainBlue ;
-}
+@use "sass:math";
 .container {
   max-width: 1000px;
   margin: auto;
-}
-.footer{
-  background-color: #0D1B48;
-  padding: 80px 0;
 }
 .row {
   display: flex;
@@ -31,27 +25,10 @@ $breakpoints: (
   .col-#{$i} {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: #{100% / $gridColumns * $i};
-
-  }
-}
-@for $i from 0 through $spacingCount {
-  .m-#{$i} {
-    margin: $i * 0.75rem;
+    flex-basis: math.div(100%, $gridColumns) * $i;
   }
 }
 
-// @for $i from 0 through $spacingCount {
-//   .p-#{$i} {
-//     margin: $i * 0.75rem;
-//   }
-// }
-
-// @for $i from 0 through $spacingCount {
-//   .pe-#{$i} {
-//     padding-right: $i * 0.75rem;
-//   }
-// }
 
 @each $mq in (sm, md, lg, xl, xxl) {
   @media screen and (min-width: map-get($breakpoints, $mq)) {
@@ -59,8 +36,7 @@ $breakpoints: (
       .col-#{$mq}-#{$i} {
         flex-grow: 0;
         flex-shrink: 0;
-        flex-basis: #{100% / $gridColumns * $i};
-
+        flex-basis: math.div(100%, $gridColumns) * $i;
       }
     }
   }

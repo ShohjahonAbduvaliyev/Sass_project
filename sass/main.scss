@@ -13,3 +13,15 @@
 @import "./components/carousel";
 @import "./components/slider";
 @import "./pages/index";
+
+@for $i from 0 through $spacingCount {
+  .m-#{$i} {
+    margin: $i * 0.75rem;
+  }
+}
+
+@for $i from 0 through $spacingCount {
+  .m-t-#{$i} {
+    margin: $i * 0.75rem;
+  }
+}
