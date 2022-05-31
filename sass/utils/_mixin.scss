@@ -28,11 +28,8 @@
    @content;
  }
 }
-@mixin xxb {
-  @media (min-width: map-get($breakpoints, xxb)) {
-   @content;
- }
-}
+
+
 @mixin breakpoint($bp: 0) {
   @media (min-width: $bp) {
     @content;
@@ -81,11 +78,7 @@
       padding-left: 1.5rem;
       padding-right: 1.5rem;
   }
-  @include xxb {
-    width: 80%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+
 
 }
 // end of container-m responsive
@@ -141,15 +134,6 @@
     padding-right: 1.5rem;
   }
 }
-.container-xxb {
-  @include xxb {
-    width: 80%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-
 
 
 @mixin box {
